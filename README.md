@@ -11,6 +11,6 @@
 
 * 날짜 : 2024년 6월 2일 오전 11시
 * 장소 : 충북 청주시 서원구 가장로 397-2 (장암동 349)
-* 청첩장 url : https://jmjh0602.github.io/wedding-card/
+* 청첩장 url : https://jmjh0602.github.io/jmjh0602/
 
 ## 축하의 말
