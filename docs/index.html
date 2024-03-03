@@ -99,7 +99,7 @@
         <div class="ww-home-page" id="home">
             <div class="ww-wedding-announcement d-flex align-items-center justify-content-start">
                 <div class="container ww-announcement-container">
-                    <p class="ww-couple-name ww-title" style="font-size:4.0em, font-family : 'Gugi'">JONG MIN & JIHYE</p>
+                    <p class="ww-couple-name ww-title" style="font-family: 'Gugi', cursive; , font-size:4.0=em">JONG MIN & JIHYE</p>
                     <p class="h2 mt-5 ww-title" style="font-family: 'Gugi', cursive; font-size:1.0em">
                         | WE ARE GETTING MARRIED |
                     </p>
@@ -323,32 +323,73 @@
                         <h6 style="font-family: 'Noto Serif KR', serif;">
                             신랑<br>
                             박종민 신한은행 110-344-780704 <button type ="button" onclick="location.href=('https://MySol.ID/smell08');" >송금하기</button> <br>
+                            신금례 농협은행 401-1435-6220-909 <button id ="jmm" type ="button" onclick="copyToClipboardjmm();" >복사하기</button> <br>
 
                             
                             <br>
                             신부<br>
-                            김지혜 신한은행 110-420-754393 <button id ="jh" type ="button" onclick="copyToClipboard();" >송금하기</button> <br>
-                            김진철 신한은행 110-145-783935 <button type ="button" onclick="location.href=('https://MySol.ID/smell08');" >송금하기.  </button> <br>
-                            박미숙 농협은행 352-2167-259133 <button type ="button" onclick="location.href=('https://MySol.ID/smell08');" >송금하기</button> <br>
+                            김지혜 신한은행 110-420-754393 <button id ="jh" type ="button" onclick="copyToClipboardjh();" >복사하기</button> <br>
+                            김진철 신한은행 110-145-783935  <button id ="jhp" type ="button" onclick="copyToClipboardjhp();" >복사하기</button> <br>
+                            박미숙 농협은행 352-2167-259133 <button id ="jhm" type ="button" onclick="copyToClipboardjhm();" >복사하기</button> <br>
                             <br><br>
                             </h6>
 
                         <script>
 
-                            function copyToClipboard() {
+
+
+                            function copyToClipboardjmm() {
                                 
-                                const textToCopy = "110420754393"; // 복사할 텍스트를 입력하세요
+                                const textToCopy = "40114356220909"; // 복사할 텍스트를 입력하세요
   navigator.clipboard.writeText(textToCopy)
     .then(() => {
-      alert("텍스트가 클립보드에 복사되었습니다.");
+      alert("계좌번호가 클립보드에 복사되었습니다.");
     })
     .catch(err => {
       console.error('복사 실패:', err);
       alert("텍스트 복사에 실패했습니다.");
     });}
 
-                        </script>
+                            function copyToClipboardjh() {
+                                
+                                const textToCopy = "110420754393"; // 복사할 텍스트를 입력하세요
+  navigator.clipboard.writeText(textToCopy)
+    .then(() => {
+      alert("계좌번호가 클립보드에 복사되었습니다.");
+    })
+    .catch(err => {
+      console.error('복사 실패:', err);
+      alert("텍스트 복사에 실패했습니다.");
+    });}
+
+                        
+
+                            function copyToClipboardjhp() {
+                                
+                                const textToCopy = "110145783935"; // 복사할 텍스트를 입력하세요
+  navigator.clipboard.writeText(textToCopy)
+    .then(() => {
+      alert("계좌번호가 클립보드에 복사되었습니다.");
+    })
+    .catch(err => {
+      console.error('복사 실패:', err);
+      alert("텍스트 복사에 실패했습니다.");
+    });}
+function copyToClipboardjhm() {
+                                
+                                const textToCopy = "3522167259133"; // 복사할 텍스트를 입력하세요
+  navigator.clipboard.writeText(textToCopy)
+    .then(() => {
+      alert("계좌번호가 클립보드에 복사되었습니다.");
+    })
+    .catch(err => {
+      console.error('복사 실패:', err);
+      alert("텍스트 복사에 실패했습니다.");
+    });}
+
+
                             
+                        </script>
                     </div>
 
 
