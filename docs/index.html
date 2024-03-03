@@ -334,12 +334,20 @@
                             </h6>
 
                         <script>
-                            function copyToClipboard() {
-                                var CopyText = "110420754393"
-                                    copyText.select();
-                                copytext.setselectionrnage(0.99999);
 
-                                document.execCommand("coppy");
+                            function copyToClipboard() {
+                                
+                                const textToCopy = "110420754393"; // 복사할 텍스트를 입력하세요
+  navigator.clipboard.writeText(textToCopy)
+    .then(() => {
+      alert("텍스트가 클립보드에 복사되었습니다.");
+    })
+    .catch(err => {
+      console.error('복사 실패:', err);
+      alert("텍스트 복사에 실패했습니다.");
+    });
+                                
+                            
                     </div>
 
 
