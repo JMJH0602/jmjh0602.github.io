@@ -3,7 +3,44 @@
 
 <!DOCTYPE html>
 <html lang="en-US">
-<head>
+const mAccounts: Account[] = [
+  {
+    bank: "하나",
+    number: "52391024244307",
+    name: "정미량",
+  },
+  {
+    bank: "농협",
+    number: "71707552154361",
+    name: "김미화",
+  },
+  {
+    bank: "하나",
+    number: "52391024095007",
+    name: "정길훈",
+  },
+];
+
+const bAccounts: Account[] = [
+  {
+    bank: "신한",
+    number: "110434273116",
+    name: "박범영",
+  },
+  {
+    bank: "하나",
+    number: "65291034775407",
+    name: "이미연",
+  },
+  {
+    bank: "농협",
+    number: "3520842586813",
+    name: "박원용",
+  },
+];
+
+    
+    <head>
     <meta charset="UTF-8">
     <meta content="IE=edge" http-equiv="X-UA-Compatible">
     <meta content="width=device-width, initial-scale=1" name="viewport">
@@ -266,100 +303,26 @@
                             축하해 주셔서 진심으로 감사드립니다.
                             <br><br>
                             </h6>
+
+                       
+                        <button> 신랑 신한은행 110-344-780704 박종민</button>
+                        <button> 신랑 신한은행 110-344-780704 박종민</button>
+                        
+                        <button> 신부 신한은행 110-420-754393 김지혜 </button>
+                        <button> 신부 신한은행 110-420-754393 김지혜 </button>
+                        <button> 신부 신한은행 110-420-754393 김지혜 </button>
                     </div>
 
 
 
-                    import Layout from '../src/components/Layout'
-import Introduce from '../src/components/Introduce'
-import SpecificInfo from '../src/components/SpecificInfo'
-import AccountNumber from '../src/components/AccountNumber'
-import InvitationMessage from '../src/components/InvitationMessage'
-import Carousel from '../src/components/Carousel'
-import GusetBook from '../src/components/GuestBook'
-import { NextSeo } from 'next-seo'
-import path from 'path';
-import { promises as fs } from 'fs';
-import type {IData} from '../types/interface'
-import Head from 'next/head'
-import SNS from '../src/components/SNS'
-import React, { useEffect, useState } from 'react'
-const Home = (props : IData) => {
-  const [isLoading, setIsLoading] = useState<boolean>(false)
-  useEffect(()=>{
-    setIsLoading(true)
-  },[])
-  return (
-    <Layout>
-      <Head>
-        <title>{props.weddingData.seo.title}</title>
-      </Head>
-      <NextSeo 
-      title={props.weddingData.seo.title}
-      description={props.weddingData.seo.description}
-      canonical={props.weddingData.seo.url}
-      openGraph={{
-        type: "website",
-        url: `${props.weddingData.seo.url}`,
-        title: `${props.weddingData.seo.title}`,
-        description: `${props.weddingData.seo.description}`,
-        images: [{ url:`${props.weddingData.img[0].url}` }],
-        site_name: "wedding",
-      }}
-      />
-      {isLoading &&
-        <React.Fragment>
-          <Introduce date={props.weddingData.weddingDate} time={props.weddingData.time} place={props.weddingData.place} hall_name={props.weddingData.hall_name} thumbNail={props.weddingData.img[0].url} />
-          <InvitationMessage brid_dad={props.weddingData.parents_info.brid_parents.dad.name} brid_mom={props.weddingData.parents_info.brid_parents.mom.name} groom_dad={props.weddingData.parents_info.groom_parents.dad.name} groom_mom={props.weddingData.parents_info.groom_parents.mom.name} brid_name={props.weddingData.client.brid.name} groom_name={props.weddingData.client.groom.name} brid_rank={props.weddingData.client.brid.rank} groom_rank={props.weddingData.client.groom.rank} img={props.weddingData.img[1].url} />
-          <Carousel img={props.weddingData.img} />
-          <SpecificInfo date={props.weddingData.weddingDate} time={props.weddingData.time} address={props.weddingData.address} bus={props.weddingData.bus} subway={props.weddingData.subway} parking={props.weddingData.parkingLot} place={props.weddingData.place} hall_name={props.weddingData.hall_name} brid_name={props.weddingData.client.brid.name} groom_name={props.weddingData.client.groom.name} lat={props.weddingData.lat} lng={props.weddingData.lng} />
-          <GusetBook />
-          <AccountNumber
-            brid_dad={props.weddingData.parents_info.brid_parents.dad.name}
-            brid_dad_bank={props.weddingData.parents_info.brid_parents.dad.bank}
-            brid_dad_accountNumber={props.weddingData.parents_info.brid_parents.dad.accountNumber}
-            brid_mom={props.weddingData.parents_info.brid_parents.mom.name}
-            brid_mom_bank={props.weddingData.parents_info.brid_parents.mom.bank}
-            brid_mom_accountNumber={props.weddingData.parents_info.brid_parents.mom.accountNumber}
-            groom_dad={props.weddingData.parents_info.groom_parents.dad.name}
-            groom_dad_bank={props.weddingData.parents_info.groom_parents.dad.bank}
-            groom_dad_accountNumber={props.weddingData.parents_info.groom_parents.dad.accountNumber}
-            groom_mom={props.weddingData.parents_info.groom_parents.mom.name}
-            brid_name={props.weddingData.client.brid.name}
-            brid_bank={props.weddingData.client.brid.bank}
-            brid_accountNumber={props.weddingData.client.brid.accountNumber}
-            brid_kakaoPay={props.weddingData.client.brid.kakaoPay}
-            groom_name={props.weddingData.client.groom.name}
-            groom_bank={props.weddingData.client.groom.bank}
-            groom_accountNumber={props.weddingData.client.groom.accountNumber}
-            groom_kakaoPay={props.weddingData.client.groom.kakaoPay}
-            img={props.weddingData.img[2].url}
-          />
-          <SNS title={props.weddingData.seo.title} description={props.weddingData.seo.description} img={props.weddingData.img[0].url} />
-          </React.Fragment>
-          }
-    </Layout>
-  )
-}
-
-
-
-
-export const getStaticProps = async() => {
-  const jsonDirectory = path.join(process.cwd(), 'json');
-  const fileContents = await fs.readFile(jsonDirectory + '/invitationData.json', 'utf8');
-  const weddingData = JSON.parse(fileContents)
-  return {
-    props : {
-      weddingData
-    }
-  }
-}
+                    
                     
                     <div class="col text-center mb-5">
                         <h6 style="font-family: 'Noto Serif KR', serif;">
                             신랑<br>
-                            박종민 신한은행 110-344-780704<br>
+                            박종민 신한은행 110-344-780704 <button type ="button" onclick="location.href=('https://MySol.ID/smell08');" >송금하기</button> <br>
+
+                            
                             <br>
                             신부<br>
                             김지혜 신한은행 110-420-754393 <br>
