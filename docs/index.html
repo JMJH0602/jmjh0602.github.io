@@ -438,7 +438,56 @@ function copyToClipboardjhm() {
                                 <button class="btn btn-primary btn-submit" type="submit">메시지 남기러 가기</button>                         
                                 <script>
                                 import GusetBook from '../src/components/GuestBook'
-                                
+
+    
+                                const Home = (props : IData) => {
+  const [isLoading, setIsLoading] = useState<boolean>(false)
+  useEffect(()=>{
+    setIsLoading(true)
+  },[])
+  return (
+    <Layout>
+      <Head>
+        <title>{props.weddingData.seo.title}</title>
+      </Head>
+      <NextSeo 
+      title={props.weddingData.seo.title}
+      description={props.weddingData.seo.description}
+      canonical={props.weddingData.seo.url}
+      openGraph={{
+    
+      }}
+      />
+                        
+      {isLoading &&
+        <React.Fragment>
+          <Introduce date={props.weddingData.weddingDate} time={props.weddingData.time} place={props.weddingData.place} hall_name={props.weddingData.hall_name} thumbNail={props.weddingData.img[0].url} />
+        
+          <GusetBook />
+          </React.Fragment>
+          }
+    </Layout>
+  )
+}
+
+
+
+
+export const getStaticProps = async() => {
+  const jsonDirectory = path.join(process.cwd(), 'json');
+  const fileContents = await fs.readFile(jsonDirectory + '/invitationData.json', 'utf8');
+  const weddingData = JSON.parse(fileContents)
+  return {
+    props : {
+      weddingData
+    }
+  }
+}
+
+
+export default Home
+
+                                    
                             </script>
                             
                             
