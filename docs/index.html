@@ -423,60 +423,9 @@ function copyToClipboardjhm() {
                                 
         
                         <div class="row">
-                                     
-                                <script>
-                                import GusetBook from '../src/components/GuestBook'
 
-    
-                                const Home = (props : IData) => {
-  const [isLoading, setIsLoading] = useState<boolean>(false)
-  useEffect(()=>{
-    setIsLoading(true)
-  },[])
-  return (
-    <Layout>
-      <Head>
-        <title>{props.weddingData.seo.title}</title>
-      </Head>
-      <NextSeo 
-      title={props.weddingData.seo.title}
-      description={props.weddingData.seo.description}
-      canonical={props.weddingData.seo.url}
-      openGraph={{
-    
-      }}
-      />
-                        
-      {isLoading &&
-        <React.Fragment>
-          <Introduce date={props.weddingData.weddingDate} time={props.weddingData.time} place={props.weddingData.place} hall_name={props.weddingData.hall_name} thumbNail={props.weddingData.img[0].url} />
-        
-          <GusetBook />
-          </React.Fragment>
-          }
-    </Layout>
-  )
-}
-
-
-
-
-export const getStaticProps = async() => {
-  const jsonDirectory = path.join(process.cwd(), 'json');
-  const fileContents = await fs.readFile(jsonDirectory + '/invitationData.json', 'utf8');
-  const weddingData = JSON.parse(fileContents)
-  return {
-    props : {
-      weddingData
-    }
-  }
-}
-
-
-export default Home
-<Guestbook/>
                                     
-                            </script>
+                        
                         
                             </form>
                             </div>
@@ -491,8 +440,7 @@ export default Home
 
 <div class="bottom_right"><i class="fa fa-arrow-up fa-2x" id="go-to-top"></i>
 </div>
-<iframe src="mus.mp3" allow="autoplay" id="audio"></iframe> 
-
+<audio autoplay controls> <source src="mus.mp3" type="audio/mp3"> </audio>
 <div class="bottom_left">
     <audio autoplay id="player" src="mus.mp3"></audio>
     <div>
