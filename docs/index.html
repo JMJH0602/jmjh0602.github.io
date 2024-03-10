@@ -5,7 +5,7 @@
 <html lang="en-US">
     
     <head>
-        <script> document.getElementById('audio').play(); </script>
+
      
             <meta charset="UTF-8">
     <meta content="IE=edge" http-equiv="X-UA-Compatible">
@@ -95,36 +95,9 @@
 <body id="top">
 <header>
 
-<audio id="audio" autoplay controls type= "audio/mp3">
-
-<source src="mus.mp3">
-
-</audio>
-
         
 
 </header>
-    <template>
-  <audio ref="audioEle">
-    <source src="mus.mp3" />
-  </audio>
-</template>
-
-<script>
-import { onMounted, ref } from 'vue';
-
-export default {
-  setup() {
-     const audioEle = ref(null)
-     onMounted(() => {
-      audioEle.value.play()
-    })
-  }
-  return {
-    audioEle
-  }
-}
-</script>
 <div id="fb-root"></div>
 <script async defer crossorigin="anonymous" src="https://connect.facebook.net/ko_KR/sdk.js#xfbml=1&version=v3.2"></script>
 <div class="page-content">
@@ -475,7 +448,7 @@ function copyToClipboardjhm() {
 </div>
 
 <div class="bottom_left">
-    <audio id="player" src="mus.mp3"></audio>
+    <audio id="player" src="mus.mp3" autoplay controls loop></audio>
     <div>
         <i class="fa fa-music fa-2x" onclick="document.getElementById('player').play()"></i>
     </div>
