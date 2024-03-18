@@ -67,7 +67,7 @@ body {
     line-height: 1.5;
     color: #212529;
     text-align: left;
-    background-color: #e1849e;
+    background-color: #fff;
 }
 
 
@@ -488,7 +488,7 @@ mark,
 
 .img-thumbnail {
     padding: 0.25rem;
-    background-color: #e1849e;
+    background-color: #fff;
     border: 1px solid #dee2e6;
     border-radius: 0.25rem;
     max-width: 100%;
@@ -2159,7 +2159,7 @@ pre code {
 
 .form-control:focus {
     color: #495057;
-    background-color: #e1849e;
+    background-color: #fff;
     border-color: #fef0ee;
     outline: 0;
     -webkit-box-shadow: 0 0 0 0.2rem rgba(245, 138, 119, 0.25);
@@ -4774,7 +4774,7 @@ tbody.collapse.show {
 
 .card-footer {
     padding: 0.75rem 1.25rem;
-    background-color: e1849e;
+    background-color: rgba(0, 0, 0, 0.03);
     border-top: 1px solid rgba(0, 0, 0, 0.125);
 }
 
@@ -5066,7 +5066,7 @@ tbody.collapse.show {
 .page-link:hover {
     color: #f04d30;
     text-decoration: none;
-    background-color: #e1849e;
+    background-color: #e9ecef;
     border-color: #dee2e6;
 }
 
@@ -6465,13 +6465,13 @@ button.bg-danger:focus {
 }
 
 .bg-gift {
-    background-color : #e1849e !important;
+    background: url("../images/gift/gift-background.png") no-repeat;
     width: 100%;
     background-size: cover;
 }
 
 .bg-light {
-    background-color: #e1849e !important;
+    background-color: #f8f9fa !important;
 }
 
 a.bg-light:hover, a.bg-light:focus,
@@ -9876,11 +9876,11 @@ body {
 }
 
 .ww-couple-friends .carousel-indicators li {
-    background-color: #e1849e;
+    background-color: #6c757d;
 }
 
 .ww-couple-friends .carousel-indicators .active {
-    background-color: #e1849e;
+    background-color: #f58a77;
 }
 
 /* Photo Gallery Style */
