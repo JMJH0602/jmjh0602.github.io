@@ -766,7 +766,7 @@ pre code {
 .order-1 {
     -webkit-box-ordinal-group: 2;
     -ms-flex-order: 1;
-    order: 1;
+    order: 1; 
 }
 
 .order-2 {
@@ -2760,7 +2760,7 @@ fieldset:disabled a.btn {
 
 .btn-secondary:not(:disabled):not(.disabled):active, .btn-secondary:not(:disabled):not(.disabled).active,
 .show > .btn-secondary.dropdown-toggle {
-    color: #fff;
+    color: #fff; 
     background-color: #545b62;
     border-color: #4e555b;
 }
@@ -6465,9 +6465,9 @@ button.bg-danger:focus {
 }
 
 .bg-gift {
-    background: url("../images/gift/gift-background.png") no-repeat;
-    width: 100%;
-    background-size: cover;
+
+    background-color: #e1849e !important;
+    
 }
 
 .bg-light {
